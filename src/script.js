@@ -28,7 +28,7 @@ const boxTexture = textureLoader.load('/textures/particles/9.png')
  */
 //cube 
  const cube = new THREE.Mesh(
-    new THREE.SphereGeometry(2,25,30),
+    new THREE.SphereGeometry(1,5,16),
     new THREE.MeshBasicMaterial({
         normalMap: boxTexture,
         transparent: false
@@ -59,14 +59,14 @@ const particlesMaterial = new THREE.PointsMaterial({
     
 })
 
-particlesMaterial.size = 0.4
+particlesMaterial.size = 0.3
 particlesMaterial.color = new THREE.Color('#3498db')
 // particlesMaterial.map = particleTexture
 particlesMaterial.transparent = true
 particlesMaterial.alphaMap = particleTexture
 
 // particlesMaterial.alphaTest = 0.001
-// particlesMaterial.depthTest = false
+particlesMaterial.depthTest = false
 particlesMaterial.depthWrite = false
 particlesMaterial.blending = THREE.AdditiveBlending
 
